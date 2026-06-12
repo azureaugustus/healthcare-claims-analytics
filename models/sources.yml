@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    catalog: healthcare_analytics
+    schema: bronze
+    tables:
+      - name: claims_raw
