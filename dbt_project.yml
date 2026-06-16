@@ -34,3 +34,9 @@ models:
     stg:
       +schema: silver
       +materialized: view
+    dim:
+      +schema: gold
+      +materialized: table
+    fct:
+      +schema: gold
+      +materialized: table

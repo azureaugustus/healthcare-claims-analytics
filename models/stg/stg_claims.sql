@@ -18,7 +18,7 @@ SELECT
     date_service,
     place_of_service_std_id AS place_of_service_id,
     revenue_code,
-    diagnosis_code_qual,
+    procedure_units_billed,
     line_charge AS claim_line_charge,
     line_allowed AS claim_line_allowed
 FROM
