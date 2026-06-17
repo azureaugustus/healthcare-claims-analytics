@@ -3,9 +3,21 @@ WITH patients AS (
         *
     FROM
         {{ ref('stg_patients') }}
+),
+deduped AS (
+    SELECT
+        patient_id,
+        MAX(patient_gender) AS patient_gender,
+        MAX(patient_year_of_birth) AS patient_year_of_birth,
+        MAX(patient_zip3) AS patient_zip3,
+        MAX(patient_state) AS patient_state
+    FROM
+        patients
+    GROUP BY
+        patient_id
 )
 SELECT
-    DISTINCT patient_id,
+    patient_id,
     patient_gender,
     CASE
         WHEN patient_gender = 'M' THEN 'Male'
@@ -22,4 +34,4 @@ SELECT
         patient_zip3,
         patient_state
         FROM
-            patients
+            deduped

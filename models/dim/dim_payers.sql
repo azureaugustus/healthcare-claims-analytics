@@ -5,7 +5,9 @@ WITH payers AS (
         {{ ref('stg_payers') }}
 )
 SELECT
-    payer_type AS payer_id,
+    DISTINCT payer_type AS payer_id,
     payer_type
 FROM
     payers
+WHERE
+    payer_type IS NOT NULL

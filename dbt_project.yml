@@ -40,3 +40,6 @@ models:
     fct:
       +schema: gold
       +materialized: table
+    mart:
+      +schema: gold
+      +materialized: view
