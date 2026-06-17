@@ -1,15 +1,31 @@
-Welcome to your new dbt project!
+# Healthcare Claims Analytics
 
-### Using the starter project
+End-to-end analytics engineering project built using:
 
-Try running the following commands:
-- dbt run
-- dbt test
+- Databricks
+- dbt
+- PySpakr
+- SQL
+- Unity Catalog
 
+## Architecture
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Bronze
+- Raw healthcare claims data
+
+### Silver
+-Standardied staging models
+
+### Gold
+- Dimension tables
+- Fact claims table
+- Business marts
+
+## Current Progress
+
+Bronze layer created
+Staging models completed
+Dimension models completed
+Fact Table completed
+Patient claims mart completed
+Dashboarding and additonal marts in progress
