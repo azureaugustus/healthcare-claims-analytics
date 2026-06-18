@@ -45,4 +45,4 @@ GROUP BY
     p.patient_gender_desc,
     py.payer_type
 ORDER BY
-    total_claim_charges DESC;
+    total_claim_charges DESC

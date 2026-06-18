@@ -6,3 +6,4 @@ sources:
     schema: bronze
     tables:
       - name: claims_raw
+      - name: provider_taxonomy
