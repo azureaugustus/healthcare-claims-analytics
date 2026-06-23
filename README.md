@@ -13,7 +13,6 @@ This project analytizes healthcare claims data to uncover insights related to:
 
 The project follows a modern Medallion Architecture (Bronze, Silver Gold) using Databricks and dbt.
 
----
 
 ## Tech Stack
 
@@ -24,7 +23,6 @@ The project follows a modern Medallion Architecture (Bronze, Silver Gold) using 
 - Unity Catalog
 - Tableau
 
---
 
 ## Architecture
 
@@ -88,9 +86,9 @@ View Dashboard:
 
 ## Dashboard Preview
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](../../screenshots/dashboard.png)
 
 ## dbt Lineage
 
-![Lineage](screenshots/lineage.png)
+![Lineage](../../screenshots/lineage.png)
 
