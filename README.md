@@ -86,9 +86,9 @@ View Dashboard:
 
 ## Dashboard Preview
 
-![Dashboard](../../screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ## dbt Lineage
 
-![Lineage](../../screenshots/lineage.png)
+![Lineage](screenshots/lineage.png)
 
