@@ -28,6 +28,7 @@ The project follows a modern Medallion Architecture (Bronze, Silver Gold) using 
 
 ## Repository Structure
 
+```text
 models/
 ├── stg
 ├── dim
@@ -41,6 +42,7 @@ notebooks/
 screenshots/
 seeds/
 tests/
+```
 
 
 ## Architecture
@@ -74,7 +76,7 @@ Examples:
 
 ### Gold Layer
 
-Analytics-ready dimensional model consisting of:
+Analytics-ready star schema consisting of:
 
 Dimensions:
 - dim_patients
@@ -82,10 +84,10 @@ Dimensions:
 - dim_payers
 - dim_diagnoses
 
-Fact Table:
+Fact Tables:
 - fct_claim_lines
 
-Business Marts:
+Analytics Marts:
 - mart_claims_by_patient_segment
 - mart_payer_claim_summary
 - mart_provider_claim_summary
