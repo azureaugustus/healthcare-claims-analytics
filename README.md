@@ -1,10 +1,10 @@
 # Healthcare Claims Analytics
 
-End-to-end analytics engineering project built using Databricks, dbt, PySpark, SQL, Unity Catalog, and Tableau.
+End-to-end analytics engineering project that leverages Databricks, Unity Catalog, PySpark, dbt, SQL, and Tableau to build a modern Medallion Architecture (Bronze, Silver, Gold) for healthcare claims analytics.
 
 ## Project Overview
 
-This project analytizes healthcare claims data to uncover insights related to: 
+This project analyzes healthcare claims data to uncover insights related to: 
 
 - Claim charges by payer type
 - Patient segment spending patterns
@@ -22,11 +22,39 @@ The project follows a modern Medallion Architecture (Bronze, Silver Gold) using 
 - SQL
 - Unity Catalog
 - Tableau
+- Jupyter/Databricks Notebooks
+- Git & GitHub
+
+
+## Repository Structure
+
+models/
+├── stg
+├── dim
+├── fct
+└── mart
+
+notebooks/
+├── 01_create_catalog_schemas_bronze.ipynb
+└── 02_data_profiling_and_validation.ipynb
+
+screenshots/
+seeds/
+tests/
 
 
 ## Architecture
 
+### Project Workflow
+1. Create Unity Catalog and Bronze layer
+2. Profile and validate raw healthcare claims
+3. Transform and standardize raw data using dbt staging models
+4. Build dimension tables
+5. Build fact tables
+6. Build business marts
+7. Visualize results in Tableau
 
+Exploratory data profiling and validation were completed in Databricks notebooks before implementing production-ready dbt models.
 
 ### Bronze Layer
 
@@ -54,13 +82,31 @@ Dimensions:
 - dim_payers
 - dim_diagnoses
 
-Fact:
+Fact Table:
 - fct_claim_lines
 
 Business Marts:
 - mart_claims_by_patient_segment
 - mart_payer_claim_summary
 - mart_provider_claim_summary
+
+## Data Validation
+
+Before building the analytics models, exploratory profiling and validation were performed to:
+
+- Validate the Bronze layer load
+- Assess null values in key business fields
+- Verify patient demographic consistency
+- Profile payer distribution and diagnosis frequency
+- Confirm dimension table record counts
+- Validate provider taxonomy reference data
+
+Implemented automated dbt data quality tests including:
+
+- unique
+- not_null
+- relationships
+- accepted_values
 
 ## Tableau Dashboard
 
@@ -83,6 +129,12 @@ View Dashboard:
 - Medicaid represented the largest payer cateogry by total charges.
 - Reimbursement percentages varied significantly across payer types.
 - General Acute Care Hospitals generated the highest provider charges.
+
+## Repository includes:
+
+- dbt lineage graph
+- Tableau dashboard
+- Databricks notebooks documenting data ingestion and exploratory data profiling
 
 ## Dashboard Preview
 
