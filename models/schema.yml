@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: stg_claims
+    columns:
+      - name: claim_id
+        data_tests:
+          - not_null
+
+  - name: stg_payers
+    columns:
+      - name: payer_type
+        data_tests:
+          - not_null
+
+  - name: dim_patients
+    columns:
+      - name: patient_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_payers
+    columns:
+      - name: payer_id
+        data_tests:
+          - unique
+          - not_null
+      - name: payer_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['MEDICAID', 'COMMERCIAL', 'MEDICARE', 'MEDICARE SUPPLEMENT', 'UNSPECIFIED']
+
+  - name: dim_providers
+    columns:
+      - name: provider_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_diagnoses
+    columns:
+      - name: diagnosis_code
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_procedures
+    columns:
+      - name: procedure_code
+        data_tests:
+          - not_null
+
+  - name: fct_claim_lines
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id
+
+      - name: provider_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_providers')
+                field: provider_id
+
+      - name: payer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_payers')
+                field: payer_id
